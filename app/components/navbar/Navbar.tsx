@@ -13,8 +13,6 @@ const Navbar = () => {
                 <Logo />
                 <Navmenu />
                 <Avatar />
-                  {/* <Search />
-                  <UserMenu /> */}
               </div>
           </Container>
       </div>

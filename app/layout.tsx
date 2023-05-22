@@ -1,4 +1,5 @@
 import Navbar from './components/navbar/Navbar'
+import SecondaryNavbar from './components/secondary-navbar/Secondary-Navbar'
 import './globals.css'
 import { Nunito } from 'next/font/google'
 
@@ -19,7 +20,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <Navbar/>
+        <Navbar />
+        <SecondaryNavbar />
         {children}
       </body>
     </html>
