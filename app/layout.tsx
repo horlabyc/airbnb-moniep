@@ -1,3 +1,4 @@
+import MainLayout from './components/main-layout/MainLayout'
 import Navbar from './components/navbar/Navbar'
 import SecondaryNavbar from './components/secondary-navbar/Secondary-Navbar'
 import './globals.css'
@@ -22,7 +23,8 @@ export default function RootLayout({
       <body className={font.className}>
         <Navbar />
         <SecondaryNavbar />
-        {children}
+        <MainLayout>{children}</MainLayout>
+        {/* {children} */}
       </body>
     </html>
   )
