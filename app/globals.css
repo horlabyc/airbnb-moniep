@@ -7,3 +7,17 @@ body,
 :root {
     height: 100%;
 }
+input:checked ~ .radio {
+  color:white;
+  background-color: green;
+}
+
+.radio-pill {
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+input[type="radio"]:checked + .radio-pill {
+  background-color: black;
+  color: white;
+}
