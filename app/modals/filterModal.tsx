@@ -1,10 +1,9 @@
 'use client'
-import { IoMdClose } from 'react-icons/io'
 import useFilterModal from '../hooks/useFilterModal'
 import { useCallback, useEffect, useState } from 'react'
 import Input from '../components/input/input'
 import {
-  FieldValues, SubmitHandler, useForm
+  FieldValues, useForm
 } from 'react-hook-form' 
 import Button from '../components/button'
 
@@ -18,6 +17,9 @@ const FilterModal = () => {
     defaultValues: {
       minPrice: "10",
       maxPrice: "300+",
+      bedrooms: "1",
+      bathrooms: "any",
+      beds: "2"
     }
   })
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -116,87 +118,87 @@ const FilterModal = () => {
                 <div className="flex flex-col gap-4 mb-6">
                   <div className="flex flex-col gap-2">
                     <p className="text-xs font-medium text-gray-700">Bedrooms</p>
-                    <div className="flex">
+                    <div className="flex gap-4">
                       <label className="flex items-center">
-                        <input type="radio" name="bedrooms" className="hidden" id="bedrooms" value="any" checked/>
+                        <input type="radio" className="hidden" id="bedroom_any" value="any"  {...register('bedrooms', { required: true })}/>
                         <span className="radio-pill border px-3 text-xs  py-1 cursor-pointer rounded-xl">Any</span>
                       </label>
-                      <label className="flex items-center ml-4">
-                        <input type="radio" name="bedrooms" className="hidden" id="bedrooms" value="1"/>
+                      <label className="flex items-center">
+                        <input type="radio" className="hidden" id="bedroom_1" value="1" {...register('bedrooms', { required: true })}/>
                         <span className="radio-pill border px-3 py-1 text-xs cursor-pointer rounded-2xl">1</span>
                       </label>
-                      <label className="flex items-center ml-4">
-                        <input type="radio" name="bedrooms" className="hidden" id="bedrooms" value="2"/>
+                      <label className="flex items-center">
+                        <input type="radio" {...register('bedrooms', { required: true })} className="hidden" id="bedroom_2" value="2"/>
                         <span className="radio-pill border px-3 py-1 text-xs cursor-pointer rounded-2xl">2</span>
                       </label>
-                      <label className="flex items-center ml-4">
-                        <input type="radio" name="bedrooms" className="hidden" id="bedrooms" value="3"/>
+                      <label className="flex items-center">
+                        <input type="radio" {...register('bedrooms', { required: true })} className="hidden" id="bedroom_3" value="3"/>
                         <span className="radio-pill border px-3 py-1 text-xs cursor-pointer rounded-2xl">3</span>
                       </label>
-                      <label className="flex items-center ml-4">
-                        <input type="radio" name="bedrooms" className="hidden" id="bedrooms" value="4"/>
+                      <label className="flex items-center">
+                        <input type="radio" {...register('bedrooms', { required: true })} className="hidden" id="bedroom_4" value="4"/>
                         <span className="radio-pill border px-3 py-1 text-xs cursor-pointer rounded-2xl">4</span>
                       </label>
-                      <label className="flex items-center ml-4">
-                        <input type="radio" name="bedrooms" className="hidden" id="bedrooms" value="5"/>
+                      <label className="flex items-center">
+                        <input type="radio" {...register('bedrooms', { required: true })} className="hidden" id="bedroom_5" value="5"/>
                         <span className="radio-pill border px-3 py-1 text-xs cursor-pointer rounded-2xl">5+</span>
                       </label>
                     </div>
                   </div>
                   <div className="flex flex-col gap-2">
                     <p className="text-xs font-medium text-gray-700">Beds</p>
-                    <div className="flex">
+                    <div className="flex gap-4">
                       <label className="flex items-center">
-                        <input type="radio" name="beds" className="hidden" id="beds" value="any"/>
+                        <input type="radio" {...register('beds', { required: true })} className="hidden" id="beds_any" value="any"/>
                         <span className="radio-pill border px-3 text-xs  py-1 cursor-pointer rounded-xl">Any</span>
                       </label>
-                      <label className="flex items-center ml-4">
-                        <input type="radio" name="beds" className="hidden" id="beds" value="1"/>
+                      <label className="flex items-center">
+                        <input type="radio" {...register('beds', { required: true })} className="hidden" id="beds_1" value="1"/>
                         <span className="radio-pill border px-3 py-1 text-xs cursor-pointer rounded-2xl">1</span>
                       </label>
-                      <label className="flex items-center ml-4">
-                        <input type="radio" name="beds" className="hidden" id="beds" value="2"/>
+                      <label className="flex items-center">
+                        <input type="radio" {...register('beds', { required: true })} className="hidden" id="beds_2" value="2"/>
                         <span className="radio-pill border px-3 py-1 text-xs cursor-pointer rounded-2xl">2</span>
                       </label>
-                      <label className="flex items-center ml-4">
-                        <input type="radio" name="beds" className="hidden" id="beds" value="3"/>
+                      <label className="flex items-center">
+                        <input type="radio" {...register('beds', { required: true })} className="hidden" id="beds_3" value="3"/>
                         <span className="radio-pill border px-3 py-1 text-xs cursor-pointer rounded-2xl">3</span>
                       </label>
-                      <label className="flex items-center ml-4">
-                        <input type="radio" name="beds" className="hidden" id="beds" value="4"/>
+                      <label className="flex items-center">
+                        <input type="radio" {...register('beds', { required: true })} className="hidden" id="beds_4" value="4"/>
                         <span className="radio-pill border px-3 py-1 text-xs cursor-pointer rounded-2xl">4</span>
                       </label>
-                      <label className="flex items-center ml-4">
-                        <input type="radio" name="beds" className="hidden" id="beds" value="5"/>
+                      <label className="flex items-center">
+                        <input type="radio" {...register('beds', { required: true })} className="hidden" id="beds_5" value="5"/>
                         <span className="radio-pill border px-3 py-1 text-xs cursor-pointer rounded-2xl">5+</span>
                       </label>
                     </div>
                   </div>
                   <div className="flex flex-col gap-2">
                     <p className="text-xs font-medium text-gray-700">Bathrooms</p>
-                    <div className="flex">
+                    <div className="flex gap-4">
                       <label className="flex items-center">
-                        <input type="radio" name="bathrooms" className="hidden" id="bathrooms" value="any"/>
-                        <span className="radio-pill border px-3 text-xs  py-1 cursor-pointer rounded-xl">Any</span>
+                        <input type="radio" {...register('bathrooms', { required: true })} className="hidden" id="bathrooms_any" value="any"/>
+                        <span className="radio-pill border px-3 py-1 text-xs cursor-pointer rounded-2xl">Any</span>
                       </label>
-                      <label className="flex items-center ml-4">
-                        <input type="radio" name="bathrooms" className="hidden" id="bathrooms" value="1"/>
+                      <label className="flex items-center">
+                        <input type="radio" {...register('bathrooms', { required: true })} className="hidden" id="bathrooms_1" value="1"/>
                         <span className="radio-pill border px-3 py-1 text-xs cursor-pointer rounded-2xl">1</span>
                       </label>
-                      <label className="flex items-center ml-4">
-                        <input type="radio" name="bathrooms" className="hidden" id="bathrooms" value="2"/>
+                      <label className="flex items-center">
+                        <input type="radio" {...register('bathrooms', { required: true })} className="hidden" id="bathrooms_2" value="2"/>
                         <span className="radio-pill border px-3 py-1 text-xs cursor-pointer rounded-2xl">2</span>
                       </label>
-                      <label className="flex items-center ml-4">
-                        <input type="radio" name="bathrooms" className="hidden" id="bathrooms" value="3"/>
+                      <label className="flex items-center">
+                        <input type="radio" {...register('bathrooms', { required: true })} className="hidden" id="bathrooms_3" value="3"/>
                         <span className="radio-pill border px-3 py-1 text-xs cursor-pointer rounded-2xl">3</span>
                       </label>
-                      <label className="flex items-center ml-4">
-                        <input type="radio" name="bathrooms" className="hidden" id="bathrooms" value="4"/>
+                      <label className="flex items-center">
+                        <input type="radio" {...register('bathrooms', { required: true })} className="hidden" id="bathrooms_4" value="4"/>
                         <span className="radio-pill border px-3 py-1 text-xs cursor-pointer rounded-2xl">4</span>
                       </label>
-                      <label className="flex items-center ml-4">
-                        <input type="radio" name="bathrooms" className="hidden" id="bathrooms" value="5"/>
+                      <label className="flex items-center">
+                        <input type="radio" {...register('bathrooms', { required: true })} className="hidden" id="bathrooms_5" value="5"/>
                         <span className="radio-pill border px-3 py-1 text-xs cursor-pointer rounded-2xl">5+</span>
                       </label>
                     </div>
