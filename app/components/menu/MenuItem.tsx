@@ -12,11 +12,10 @@ interface MenuItemProps {
 
 const MenuItem: React.FC<MenuItemProps> = ({ Icon, name, linkActive }) => {
   const menuToggle = useMenuToggle()
-
   return (
     <div className={`flex items-center gap-4 p-4 cursor-pointer hover:bg-gray-100 ${linkActive && 'border-r-[3px] border-red-800'} ${!menuToggle.isOpen && 'justify-around'}`}>
       <Icon className='text-2xl text-gray-600'/>
-      {menuToggle.isOpen && <span className='text-sm text-gray-700 font-medium'>{name}</span>}
+      {menuToggle.isOpen && <span className='text-sm text-gray-700 font-medium duration-700'>{name}</span>}
     </div>
   )
 }

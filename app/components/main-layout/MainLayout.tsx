@@ -2,6 +2,7 @@
 import React, { useCallback } from 'react'
 import Menu from '../menu/Menu'
 import useMenuToggle from '@/app/hooks/useMenuToggle'
+import Listings from '../listings/Listings'
 
 interface MainLayoutProps {
   children: React.ReactNode
@@ -16,7 +17,8 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 
   return (
     <div
-      className={`grid grid-cols-[220px,auto] h-screen pt-[148px] transition-all duration-700 ease-in-out ${!menuToggle.isOpen && 'grid-cols-[100px,auto]'}`}
+      className={
+        `grid h-screen pt-[148px] transition-width duration-700 ease-in-out ${menuToggle.isOpen ? 'grid-cols-[220px,auto]' : 'grid-cols-[100px,auto]'}`}
     >
       <div
         className="border-r-[1px] h-full py-8"
@@ -25,7 +27,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
       >
         <Menu />
       </div>
-      {children}
+      <Listings />
     </div>
   )
 }
