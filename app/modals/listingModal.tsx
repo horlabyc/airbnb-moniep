@@ -49,7 +49,7 @@ const ListingModal = () => {
   return (
     <>
       <div className="relative">
-        <div className="fixed z-[200] left-[386px] top-[6px] p-1 bg-white hover:bg-black rounded-full cursor-pointer transition group" onClick={handleClose}>
+        <div className="fixed z-[200] left-[18rem] top-[12px] p-1 bg-white hover:bg-black rounded-full cursor-pointer transition group" onClick={handleClose}>
           <IoMdClose size={12} className='group-hover:text-white'/>
         </div>
         <div
