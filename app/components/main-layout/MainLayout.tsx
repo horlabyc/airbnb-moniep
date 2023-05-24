@@ -19,7 +19,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
     <div
       className={
-        `grid h-screen pt-[148px] transition-all duration-700 ease-in-out ${menuToggle.isOpen ? 'grid-cols-[220px,auto]' : 'grid-cols-[100px,auto]'}`}
+        `grid h-screen transition-all duration-700 ease-in-out ${menuToggle.isOpen ? 'grid-cols-[220px,auto]' : 'grid-cols-[100px,auto]'}`}
     >
       <div
         className="border-r-[1px] h-full py-8"

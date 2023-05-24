@@ -15,6 +15,14 @@ import { SiAirplayaudio } from 'react-icons/si'
 import { IoManOutline } from 'react-icons/io5'
 import { CiParking1 } from 'react-icons/ci'
 import Button from '../components/button'
+import ReviewMeter from '../components/review-meter'
+import Testimonial from '../components/testimonial'
+import testimonials from '../data/testimonials.json'
+import Map from '../components/map'
+import Host from '../components/host'
+import Reserve from '../components/reserve'
+import ListingOffer from '../components/listings/listingOffer'
+import ImagePreview from '../components/image-preview'
 
 const ListingModal = () => {
   const listingModal = useListingModal()
@@ -56,87 +64,7 @@ const ListingModal = () => {
             `}>
               <div className="translate h-auto border-0 shadow-lg relative flex flex-col gap-4 w-full bg-white outline-none focus:outline-none">
                 <div className="p-6 flex flex-col gap-4">
-                  <div className="w-full flex gap-4 relative">
-                    <div className="
-                      basis-[60%] 
-                      aspect-square 
-                      relative 
-                      overflow-hidden 
-                      rounded-xl
-                      h-[500px]">
-                      <Image
-                        fill
-                        className="
-                          object-cover 
-                          h-full
-                          w-full 
-                          hover:scale-110 
-                          transition
-                        "
-                        src={listing?.images[0]}
-                        alt="Listing"
-                      />
-                    </div>
-                    <div className="flex flex-col gap-4 h-[500px]">
-                      <div className="aspect-square relative overflow-hidden rounded-xl h-full">
-                        <Image
-                          fill
-                          className="
-                            object-cover 
-                            h-full
-                            w-full 
-                            hover:scale-110 
-                            transition
-                          "
-                          sizes='200'
-                          src={listing?.images[1]}
-                          alt="Listing"
-                        />
-                      </div>
-                      <div className="aspect-square relative overflow-hidden rounded-xl">
-                        <Image
-                          fill
-                          className="
-                            object-cover 
-                            h-full
-                            w-full 
-                            hover:scale-110 
-                            transition
-                          "
-                          sizes='200'
-                          src={listing?.images[2]}
-                          alt="Listing"
-                        />
-                      </div>
-                    {/* <Image
-                      fill
-                      className="
-                        object-cover 
-                        h-[full] 
-                        w-full 
-                        group-hover:scale-110 
-                        transition
-                      "
-                      sizes='200'
-                      src={listing?.images[1]}
-                      alt="Listing"
-                      />
-                      <Image
-                      fill
-                      className="
-                        object-cover 
-                        h-[full] 
-                        w-full 
-                        group-hover:scale-110 
-                        transition
-                      "
-                      sizes='200'
-                      src={listing?.images[2]}
-                      alt="Listing"
-                    /> */}
-                    </div>
-                    <div className="bg-gray-100 absolute rounded-xl py-2 px-3 bottom-3 left-4 text-xs text-gray-700">View All Photos</div>
-                  </div>
+                  <ImagePreview listing={listing}/>
                   <div className="flex items-center gap-2 border py-2 px-3 w-[100px] rounded-xl text-xs text-gray-700">
                     <AiOutlineTrophy color='red'/> Superhost
                   </div>
@@ -216,141 +144,80 @@ const ListingModal = () => {
                         <p className='text-red-600 text-xs font-bold cursor-pointer'>Read more</p>
                       </section>
 
-                      <section className='py-8'>
+                      {/* LISTING OFFERS */}
+                      <section className='py-8 border-b-[1px] flex flex-col gap-4'>
                         <h2 className='text-lg font-bold mb-8'>What this place offers</h2>
                         <div className="grid grid-cols-3 gap-x-8 gap-y-8">
-                          <div className="flex items-center gap-3">
-                            <IoManOutline size={24}/>
-                            <span className='text-gray-600 text-sm w-[100px]'>Kitchen</span>
-                          </div>
-                          <div className="flex items-center gap-4">
-                            <IoManOutline size={24}/>
-                            <span className='text-gray-600 text-sm w-[100px]'>Private patio or balcony</span>
-                          </div>
-                          <div className="flex items-center gap-4">
-                            <SiAirplayaudio size={24}/>
-                            <span className='text-gray-600 text-sm w-[9100px0px]'>Centrail air conditioning</span>
-                          </div>
-                          <div className="flex items-center gap-4">
-                            <MdOutlineAssuredWorkload size={24}/>
-                            <span className='text-gray-600 text-sm w-[100px]'>Dedicated workspaces</span>
-                          </div>
-                          <div className="flex items-center gap-4">
-                            <IoWifiOutline />
-                            <span className='text-gray-600 text-sm w-[100px]'>Wifi</span>
-                          </div>
-                          <div className="flex items-center gap-4">
-                            <GiTheater />
-                            <span className='text-gray-600 text-sm w-[100px]'>Heating</span>
-                          </div>
-                          <div className="flex items-center gap-4">
-                            <MdOutlineHotel />
-                            <span className='text-gray-600 text-sm w-[100px]'>{`55" 4k TV`}</span>
-                          </div>
-                          <div className="flex items-center gap-4">
-                            <CiParking1 />
-                            <span className='text-gray-600 text-sm w-[100px]'>1 parking space</span>
-                          </div>
-                          <div className="flex items-center gap-4">
-                            <AiOutlineCamera />
-                            <span className='text-gray-600 text-sm w-[100px]'>Security cameras</span>
+                          <ListingOffer Icon={IoManOutline} offer='Kitchen' />
+                          <ListingOffer Icon={IoManOutline} offer='Private patio or balcony' />
+                          <ListingOffer Icon={SiAirplayaudio} offer='Centrail air conditioning' />
+                          <ListingOffer Icon={MdOutlineAssuredWorkload} offer='Dedicated workspaces' />
+                          <ListingOffer Icon={IoWifiOutline} offer='Wifi' />
+                          <ListingOffer Icon={GiTheater} offer='Heating' />
+                          <ListingOffer Icon={MdOutlineHotel} offer={`55" 4k TV`} />
+                          <ListingOffer Icon={CiParking1} offer='1 parking space' />
+                          <ListingOffer Icon={AiOutlineCamera} offer='Security cameras'/>
+                        </div>
+                        <p className='text-red-600 text-xs font-bold cursor-pointer'>View more</p>
+                      </section>
+
+                      {/* REVIEWS SECTION */}
+
+                      <section className='py-8 flex flex-col gap-4 border-b-[1px]'>
+                        <div className="flex justify-between items-center">
+                          <h2 className='text-lg font-bold'>Reviews</h2>
+                          <div className="flex gap-2 items-center">
+                            <AiFillStar fill='black' className=''/> 
+                            <span className='text-gray-500 text-sm'>{listing?.rating.toFixed(2)}</span>
+                            <span className='text-sm text-gray-500'> -- </span>
+                            <span className='text-sm text-gray-500'> 124 reviews </span>
                           </div>
                         </div>
+                        <div className="rounded-lg border px-8 py-4 flex flex-col gap-4">
+                          <ReviewMeter category='Cleanliness' rate={5} />
+                          <ReviewMeter category='Accuracy' rate={4.5} />
+                          <ReviewMeter category='Communication' rate={4.8} />
+                          <ReviewMeter category='Location' rate={3.5} />
+                          <ReviewMeter category='Check-in' rate={5} />
+                          <ReviewMeter category='Value' rate={4.2}/>
+                        </div>
+                        <div className="testimonial grid grid-cols-2 gap-x-8 gap-y-8">
+                          {testimonials.map((testimonial) => (
+                            <Testimonial
+                              message={testimonial.message}
+                              key={testimonial.id}
+                              date={new Date(testimonial.date)}
+                              userImage={testimonial.userImage}
+                              username={testimonial.username}
+                            />
+                          ))}
+                        </div>
+                        <p className='text-red-600 text-xs font-bold cursor-pointer'>View more</p>
+                      </section>
+
+                      {/* LOCATION */}
+                      <section className='py-8 flex flex-col gap-4 border-b-[1px]'>
+                        <h2 className='text-lg font-bold'>{`Where you'll be`}</h2>
+                        <div className="map">
+                          <Map center={[6.5244, 3.3792]}/>
+                        </div>
+                        <div className="flex flex-col gap-2">
+                          <span className='text-gray-900 text-md'>{listing?.city}, {listing?.state}, {listing?.country}</span>
+                          <span className='text-gray-500 text-sm'>The property, give its close proximity to the refreshing hillside town of Tagaytay and clear blue beaches of Nasugbu, provides a quick escape from the hustle and bustle of city life</span>
+                        </div>
+                        <p className='text-red-600 text-xs font-bold cursor-pointer'>View more</p>
+                      </section>
+
+                      {/* HOST INFO */}
+                      <section className="py-8 flex flex-col gap-4 border-b-[1px]">
+                        <h2 className='text-lg font-bold'>Host</h2>
+                        <Host userImage='/images/t1/c739ad41-5a92-4b6b-bfbc-8cd3071094b1.webp' userName='Brenda' />
+                        <p className='text-red-600 text-xs font-bold cursor-pointer'>View more</p>
                       </section>
                     </section>
 
-                    <div className="flex flex-1 flex-col gap-4 h-full">
-                      <div className="bg-[#f6f6f6] flex flex-col p-6 rounded-xl flex-1">
-                        <div className="flex justify-between">
-                          <div className="">
-                            <span className='font-bold text-black text-md tracking-wide'>${listing?.pricePerNight}</span>
-                            <span className='text-[0.6rem] text-gray-500'> / night</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <AiFillStar fill='black' className=''/> 
-                              <span className='text-gray-500 text-sm'>{listing?.rating.toFixed(2)}</span>
-                          </div>
-                        </div>
-
-                        <div className="flex justify-between mt-4">
-                          <div>
-                            <span className='text-gray-500 text-xs'>Check in</span>
-                            <div className="bg-white flex items-center justify-between rounded-xl py-4 px-6 gap-4 cursor-pointer">
-                              <FiCalendar className='text-gray-500'/>
-                              <span className='text-gray-700 text-sm'>6/14/2023</span>
-                            </div>
-                          </div>
-                          <div>
-                            <span className='text-gray-500 text-xs'>Check out</span>
-                            <div className="bg-white flex items-center justify-between rounded-xl py-4 px-6 gap-4 cursor-pointer">
-                              <FiCalendar className='text-gray-500'/>
-                              <span className='text-gray-700 text-sm'>6/21/2023</span>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="mt-4 border-b-[1px] pb-8">
-                          <span className='text-gray-500 text-xs'>Guests</span>
-                          <div className="text-sm bg-white w-full p-4 rounded-xl flex items-center justify-between cursor-pointer">
-                            <span className='text-gray-700'>1 guest</span>
-                            <IoIosArrowDown className='text-gray-700'/>
-                          </div>
-                        </div>
-
-                        <div className="mt-6 pb-6 border-b-[1px]">
-                          <ul className='flex flex-col gap-3'>
-                            <li className="flex justify-between">
-                              <div className="flex items-center gap-1">
-                                <p className='text-md font-md'>6 nights</p>
-                                <FiInfo size={14} className='text-gray-500'/>
-                              </div>
-                              <p className='text-md font-md'>$2166</p>
-                            </li>
-                            <li className="flex justify-between">
-                              <div className="flex items-center gap-1">
-                                <p className='text-md font-md'>Cleaning fee</p>
-                                <FiInfo size={14} className='text-gray-500'/>
-                              </div>
-                              <p className='text-md font-md'>$2166</p>
-                            </li>
-                            <li className="flex justify-between">
-                              <div className="flex items-center gap-1">
-                                <p className='text-md font-md'>Airbnb service fee</p>
-                                <FiInfo size={14} className='text-gray-500'/>
-                              </div>
-                              <p className='text-md font-md'>$2166</p>
-                            </li>
-                          </ul>
-                        </div>
-
-                        <div className="flex justify-between items-center mt-6 ">
-                          <div className="flex flex-col">
-                            <p className='text-md font-md'>Total</p>
-                            <p className='text-xs text-gray-500'>Before taxes</p>
-                          </div>
-                          <p className='text-md font-md'>$2606</p>
-                        </div>
-
-                        <div className="pt-4">
-                          <Button
-                            disabled={true}
-                            label="Reserve"
-                            onClick={() => { }}
-                          />
-                        </div>
-                      </div>
-
-                      <div className="rounded-xl p-6 bg-[#fff0f5]">
-                        <div className="flex gap-8 items-center">
-                          <SlDiamond size={30} color='red' />
-                          <div className="">
-                            <p className='font-semibold text-lg'>This is a rare find</p>
-                            <p className='text-sm text-gray-500'>{`Kathry'n place on Airbnb is usually fully booked`}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  
+                    {/* RESERVE */}
+                    <Reserve listing={listing}/>
                   </div>
                 </div>
               </div>
