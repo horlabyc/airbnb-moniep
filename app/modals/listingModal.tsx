@@ -1,28 +1,24 @@
 'use client'
-import { IoIosArrowDown, IoMdClose } from 'react-icons/io'
 import { useCallback, useEffect, useState } from 'react'
 import useListingModal from '../hooks/useListingModal'
-import Image from 'next/image'
 import { AiFillStar, AiOutlineCamera, AiOutlineHeart, AiOutlineTrophy } from 'react-icons/ai'
-import { FiCalendar, FiInfo, FiUpload } from 'react-icons/fi'
+import { FiUpload } from 'react-icons/fi'
 import { IoAccessibilityOutline, IoBedOutline, IoWifiOutline } from 'react-icons/io5'
 import { GiBunkBeds, GiTheater } from 'react-icons/gi'
 import { FaShower } from 'react-icons/fa'
 import { MdOutlineAssuredWorkload, MdOutlineHotel, MdProductionQuantityLimits } from 'react-icons/md'
 import { TbCalendarTime, TbUserCheck } from 'react-icons/tb'
-import { SlDiamond } from 'react-icons/sl'
 import { SiAirplayaudio } from 'react-icons/si'
 import { IoManOutline } from 'react-icons/io5'
 import { CiParking1 } from 'react-icons/ci'
-import Button from '../components/button'
 import ReviewMeter from '../components/review-meter'
 import Testimonial from '../components/testimonial'
 import testimonials from '../data/testimonials.json'
-import Map from '../components/map'
 import Host from '../components/host'
 import Reserve from '../components/reserve'
 import ListingOffer from '../components/listings/listingOffer'
 import ImagePreview from '../components/image-preview'
+import dynamic from 'next/dynamic'
 
 const ListingModal = () => {
   const listingModal = useListingModal()
@@ -40,6 +36,11 @@ const ListingModal = () => {
   }, [listingModal])
 
   const listing = listingModal.currentListing
+
+  const Map = dynamic(() => import("../components/map"), {
+    loading: () => <p>loading...</p>,
+    ssr: false
+  })
 
   if (!listingModal.isOpen) {
     return null

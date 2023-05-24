@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={font.className}>
         <Navbar />
         <SecondaryNavbar />
-        <MainLayout>{children}</MainLayout>
+        <MainLayout />
         {/* {children} */}
       </body>
     </html>

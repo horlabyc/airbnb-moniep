@@ -1,8 +1,14 @@
+'use client'
 import React from 'react'
 import ListingCard from './ListingCard'
 import listings from '../../data/listings.json'
-import ListingModal from '@/app/modals/listingModal'
+import dynamic from 'next/dynamic'
+
 const Listings = () => {
+  const ListingModal = dynamic(() => import("@/app/modals/listingModal"), {
+    loading: () => <p>loading...</p>,
+    ssr: false
+  })
   return (
     <>
       <div 

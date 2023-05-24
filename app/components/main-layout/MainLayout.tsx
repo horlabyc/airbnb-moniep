@@ -1,15 +1,11 @@
 'use client'
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import Menu from '../menu/Menu'
-import useMenuToggle from '@/app/hooks/useMenuToggle'
+import useMenuToggle from '../../hooks/useMenuToggle'
 import Listings from '../listings/Listings'
-import FilterModal from '@/app/modals/filterModal'
+import FilterModal from '../../modals/filterModal'
 
-interface MainLayoutProps {
-  children: React.ReactNode
-}
-
-const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
+const MainLayout = () => {
   const menuToggle = useMenuToggle()
 
   const onMenuToggle = useCallback(() => {

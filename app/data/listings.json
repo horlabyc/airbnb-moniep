@@ -92,25 +92,49 @@
     "serviceFee": 2430
   },
   {
-    "_id": "10006550",
-    "listing_url": "https://www.airbnb.com/rooms/10006546",
-    "name": "Ribeira Charming Duplex",
-    "city": "Aspen",
-    "state": "Colorado",
-    "country": "United States",
-    "bedrooms": 2,
-    "guests": 3,
+    "_id": "10006553",
+    "listing_url": "https://www.airbnb.com/rooms/10006549",
+    "name": "Cosy vibes in central Vesterbro",
+    "city": "Shao",
+    "state": "Copenhagen",
+    "country": "Denmark",
+    "bedrooms": 3,
+    "guests": 6,
     "beds": 5,
-    "baths": 2,
+    "baths": 3,
     "images": [
-      "/images/l1/0db5cffd-7f0d-4e13-bd59-39cb9861cdaa.webp",
-      "/images/l1/5d53f571-dc5c-449a-b333-22ed2afef829.webp",
-      "/images/l1/e22d9d0e-fa0b-48e1-9d35-ab7c3463b357.webp"
+      "/images/l4/7d67b117-1973-4755-bee1-27cbb3c12b65.webp",
+      "/images/l4/69dcd784-3b9a-49cf-93c6-12ad36539269.webp",
+      "/images/l4/6524dc09-bf0b-4c6c-8a78-2958b0aaea6a.webp",
+      "/images/l4/b3d64556-02f2-4839-8be0-98460bdadbe3.webp"
     ],
-    "pricePerNight": 500,
+    "pricePerNight": 5500,
     "rating": 5.00,
     "superHost": false,
-    "cleaningFee": 2430,
+    "cleaningFee": 2166,
+    "serviceFee": 2430
+  },
+  {
+    "_id": "10006552",
+    "listing_url": "https://www.airbnb.com/rooms/10006548",
+    "name": "Copacabana: Cozy bedroom with bathroom and air-conditioning",
+    "city": "Brazaville",
+    "state": "Copacabana",
+    "country": "Brazil",
+    "bedrooms": 1,
+    "guests": 2,
+    "beds": 2,
+    "baths": 2,
+    "images": [
+      "/images/l3/5fae6309-3dcf-4a78-8e81-c914ff020eb6.webp",
+      "/images/l3/bf9457a9-5093-4999-ba1f-35b38a0146f5.webp",
+      "/images/l3/c07300e7-948a-42c5-b78e-a933e71dff03.webp",
+      "/images/l3/de1e0e3e-2cf6-4d60-b75d-826ec5d57d0c.webp"
+    ],
+    "pricePerNight": 5000,
+    "rating": 3.00,
+    "superHost": true,
+    "cleaningFee": 216,
     "serviceFee": 2430
   },
   {
@@ -138,49 +162,25 @@
     "serviceFee": 2430
   },
   {
-    "_id": "10006552",
-    "listing_url": "https://www.airbnb.com/rooms/10006548",
-    "name": "Copacabana: Cozy bedroom with bathroom and air-conditioning",
-    "city": "Brazaville",
-    "state": "Copacabana",
-    "country": "Brazil",
-    "bedrooms": 1,
-    "guests": 2,
-    "beds": 2,
+    "_id": "10006550",
+    "listing_url": "https://www.airbnb.com/rooms/10006546",
+    "name": "Ribeira Charming Duplex",
+    "city": "Aspen",
+    "state": "Colorado",
+    "country": "United States",
+    "bedrooms": 2,
+    "guests": 3,
+    "beds": 5,
     "baths": 2,
     "images": [
-      "/images/l3/5fae6309-3dcf-4a78-8e81-c914ff020eb6.webp",
-      "/images/l3/bf9457a9-5093-4999-ba1f-35b38a0146f5.webp",
-      "/images/l3/c07300e7-948a-42c5-b78e-a933e71dff03.webp",
-      "/images/l3/de1e0e3e-2cf6-4d60-b75d-826ec5d57d0c.webp"
+      "/images/l1/0db5cffd-7f0d-4e13-bd59-39cb9861cdaa.webp",
+      "/images/l1/5d53f571-dc5c-449a-b333-22ed2afef829.webp",
+      "/images/l1/e22d9d0e-fa0b-48e1-9d35-ab7c3463b357.webp"
     ],
-    "pricePerNight": 5000,
-    "rating": 3.00,
-    "superHost": true,
-    "cleaningFee": 216,
-    "serviceFee": 2430
-  },
-  {
-    "_id": "10006553",
-    "listing_url": "https://www.airbnb.com/rooms/10006549",
-    "name": "Cosy vibes in central Vesterbro",
-    "city": "Shao",
-    "state": "Copenhagen",
-    "country": "Denmark",
-    "bedrooms": 3,
-    "guests": 6,
-    "beds": 5,
-    "baths": 3,
-    "images": [
-      "/images/l4/7d67b117-1973-4755-bee1-27cbb3c12b65.webp",
-      "/images/l4/69dcd784-3b9a-49cf-93c6-12ad36539269.webp",
-      "/images/l4/6524dc09-bf0b-4c6c-8a78-2958b0aaea6a.webp",
-      "/images/l4/b3d64556-02f2-4839-8be0-98460bdadbe3.webp"
-    ],
-    "pricePerNight": 5500,
+    "pricePerNight": 500,
     "rating": 5.00,
     "superHost": false,
-    "cleaningFee": 2166,
+    "cleaningFee": 2430,
     "serviceFee": 2430
   }
 ]
