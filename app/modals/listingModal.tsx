@@ -19,6 +19,7 @@ import Reserve from '../components/reserve'
 import ListingOffer from '../components/listings/listingOffer'
 import ImagePreview from '../components/image-preview'
 import dynamic from 'next/dynamic'
+import { IoMdClose } from 'react-icons/io'
 
 const ListingModal = () => {
   const listingModal = useListingModal()
@@ -48,14 +49,13 @@ const ListingModal = () => {
   return (
     <>
       <div className="relative">
-        {/* <div className="absolute p-1 bg-white rounded-full cursor-pointer" onClick={handleClose}>
-          <IoMdClose size={12}/>
-        </div> */}
+        <div className="fixed z-[200] left-[386px] top-[6px] p-1 bg-white hover:bg-black rounded-full cursor-pointer transition group" onClick={handleClose}>
+          <IoMdClose size={12} className='group-hover:text-white'/>
+        </div>
         <div
           className="justify-end items-center overflow-x-hidden 
           overflow-y-hidden fixed z-50 inset-0 outline-none
           focus:outline-none bg-neutral-800/70"
-          onClick={handleClose}
         >
           <div className="absolute right-0 top-0 w-[75%] ml-auto h-full">
             <div className={

@@ -20,11 +20,10 @@ export default function RootLayout({
   }) {
   return (
     <html lang="en">
-      <body className={font.className}>
+      <body className={`${font.className} no-scrollbar`}>
         <Navbar />
         <SecondaryNavbar />
         <MainLayout />
-        {/* {children} */}
       </body>
     </html>
   )

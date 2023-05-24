@@ -38,23 +38,19 @@ const FilterModal = () => {
   }
   return (
     <>
-      <div
-        className="justify-end items-center overflow-x-hidden 
-        overflow-y-hidden fixed z-50 inset-0 outline-none
-        focus:outline-none"
-      >
-        <div className="absolute right-0 top-[125px] w-[25%] my-6 ml-auto h-full">
-          <div className={
-            `translate duration-300 w-full h-full 
-            ${showModal ? 'translate-x-0' : 'translate-x-full'}
-            ${showModal ? 'opacity-100' : 'opacity-0'}
-          `}>
-            <div className="translate h-full border-0 shadow-lg relative flex flex-col gap-4 w-full bg-white outline-none focus:outline-none">
-              <div className="flex items-center mx-6 py-2 rounded-t justify-between relative border-b-[1px]">
+      <div className="fixed right-0 top-[125px] w-[25%] my-6 ml-auto h-full shadow-lg">
+        <div className={
+          `translate duration-300 w-full h-full bg-white
+          ${showModal ? 'translate-x-0' : 'translate-x-full'}
+          ${showModal ? 'opacity-100' : 'opacity-0'}
+        `}>
+          <div className="translate h-[90%] border-0 overflow-scroll relative flex flex-col gap-4 w-full bg-white outline-none focus:outline-none" style={{ height: `calc(100vh - 151px)`}}>
+            <div className="">
+              <div className="flex items-center mx-6 py-4 rounded-t justify-between relative border-b-[1px]">
                 <span className="text-md font-medium">Filters</span>
                 <span className="text-md text-red-400 cursor-pointer" onClick={handleClose}>Clear All</span>
               </div>
-              <div className="flex flex-col mx-6 border-b-[1px]">
+              <div className="flex flex-col mx-6 my-2 border-b-[1px]">
                 <p className="text-md font-medium text-sm">Price range</p>
                 <p className="text-xs text-gray-400 font-thin">The average nightly price is $133.33</p>
                 <div className="flex gap-4 mb-3">
@@ -113,9 +109,9 @@ const FilterModal = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col px-6 border-b-[1px] gap-4">
+              <div className="flex flex-col px-6 mt-4 border-b-[1px] gap-4">
                 <p className="text-md font-medium text-sm">Rooms, beds, and baths</p>
-                <div className="flex flex-col gap-2 mb-4">
+                <div className="flex flex-col gap-4 mb-4">
                   <div className="flex flex-col gap-2">
                     <p className="text-xs font-medium text-gray-700">Bedrooms</p>
                     <div className="flex gap-4">
@@ -205,13 +201,13 @@ const FilterModal = () => {
                   </div>
                 </div>
               </div>
-              <div className="px-6 pb-4">
-                <Button
-                  disabled={true}
-                  label="Show 836 Homes"
-                  onClick={() => { }}
+            </div>
+            <div className="px-6 pb-4">
+              <Button
+                disabled={true}
+                label="Show 836 Homes"
+                onClick={() => { }}
               />
-              </div>
             </div>
           </div>
         </div>
