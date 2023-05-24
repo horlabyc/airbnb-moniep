@@ -9,15 +9,15 @@ const font = Nunito({
 })
 
 export const metadata = {
-  title: 'Airbnb Moniepoiint',
-  description: 'Airbnb clone',
+  title: 'Airbnb Moniepoint',
+  description: 'Airbnb clone'
 }
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
-}) {
+  }) {
   return (
     <html lang="en">
       <body className={font.className}>

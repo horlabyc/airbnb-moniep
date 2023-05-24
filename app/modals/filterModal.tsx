@@ -43,21 +43,21 @@ const FilterModal = () => {
         overflow-y-hidden fixed z-50 inset-0 outline-none
         focus:outline-none"
       >
-        <div className="absolute right-0 top-[125px] w-[20%] my-6 ml-auto h-full">
+        <div className="absolute right-0 top-[125px] w-[25%] my-6 ml-auto h-full">
           <div className={
             `translate duration-300 w-full h-full 
             ${showModal ? 'translate-x-0' : 'translate-x-full'}
             ${showModal ? 'opacity-100' : 'opacity-0'}
           `}>
             <div className="translate h-full border-0 shadow-lg relative flex flex-col gap-4 w-full bg-white outline-none focus:outline-none">
-              <div className="flex items-center mx-6 py-6 rounded-t justify-between relative border-b-[1px]">
+              <div className="flex items-center mx-6 py-2 rounded-t justify-between relative border-b-[1px]">
                 <span className="text-md font-medium">Filters</span>
                 <span className="text-md text-red-400 cursor-pointer" onClick={handleClose}>Clear All</span>
               </div>
               <div className="flex flex-col mx-6 border-b-[1px]">
                 <p className="text-md font-medium text-sm">Price range</p>
                 <p className="text-xs text-gray-400 font-thin">The average nightly price is $133.33</p>
-                <div className="flex gap-4 mt-4 mb-6">
+                <div className="flex gap-4 mb-3">
                 <Input
                   id='minPrice'
                   label='Min Price'
@@ -107,7 +107,7 @@ const FilterModal = () => {
                     <input id="default-checkbox" type="checkbox" value="" className="accent-red-500 w-4 h-4 text-red-600 bg-gray-100 border-gray-300 rounded focus:ring-red-500 dark:focus:ring-red-600"/>
                     <label className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"></label>
                   </div>
-                  <div className="flex flex-col mb-6">
+                  <div className="flex flex-col mb-4">
                     <p className='text-xs text-gray-700'>Shared room</p>
                     <p className='text-xs text-gray-500'>A sleeping place and common areas that may be shared with others</p>
                   </div>
@@ -115,7 +115,7 @@ const FilterModal = () => {
               </div>
               <div className="flex flex-col px-6 border-b-[1px] gap-4">
                 <p className="text-md font-medium text-sm">Rooms, beds, and baths</p>
-                <div className="flex flex-col gap-4 mb-6">
+                <div className="flex flex-col gap-2 mb-4">
                   <div className="flex flex-col gap-2">
                     <p className="text-xs font-medium text-gray-700">Bedrooms</p>
                     <div className="flex gap-4">
